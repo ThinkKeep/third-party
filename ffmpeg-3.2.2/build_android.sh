@@ -46,6 +46,7 @@ make clean
 make
 make install
 
+#pack libffmpeg.so
 $TOOLCHAIN/bin/arm-linux-androideabi-ld -rpath-link=$SYSROOT/usr/lib -L$SYSROOT/usr/lib -L$PREFIX/lib -soname libffmpeg.so -shared -nostdlib -Bsymbolic --whole-archive --no-undefined -o $PREFIX/libffmpeg.so \
     ../x264-android/lib/libx264.a \
     libavcodec/libavcodec.a \
@@ -59,3 +60,5 @@ $TOOLCHAIN/bin/arm-linux-androideabi-ld -rpath-link=$SYSROOT/usr/lib -L$SYSROOT/
     -lc -lm -lz -ldl -llog --dynamic-linker=/system/bin/linker $TOOLCHAIN/lib/gcc/arm-linux-androideabi/4.9.x/libgcc.a
 
 
+#strip libffmpeg.so
+$TOOLCHAIN/bin/arm-linux-androideabi-strip $PREFIX/libffmpeg.so

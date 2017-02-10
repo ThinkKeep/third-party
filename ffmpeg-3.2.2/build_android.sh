@@ -24,6 +24,7 @@ ADDI_LDFLAGS="-L$(pwd)/../x264-android/lib"
     --enable-demuxer=mpegts \
     --disable-decoders \
     --enable-decoder=aac \
+    --enable-encoder=aac \
     --enable-decoder=h264 \
     --disable-demuxers \
     --disable-parsers \

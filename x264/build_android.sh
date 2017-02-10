@@ -12,8 +12,8 @@ PREFIX=../x264-android
     --host=arm-linux \
     --cross-prefix=$TOOLCHAIN/bin/arm-linux-androideabi- \
     --sysroot=$PLATFORM
-
 make clean
 make
+make install
 
 
